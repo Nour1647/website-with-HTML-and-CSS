@@ -1,0 +1,943 @@
+/* ==========================================
+   Global & Reset Styles
+========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 3000px;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  padding: 40px;
+  text-align: center;
+  font-size: 50px;
+}
+
+.line {
+  width: 200px;
+  height: 5px;
+  background-color: black;
+  margin: 0% auto;
+  border-radius: 8px;
+}
+
+button {
+  width: 180px;
+  height: 30px;
+  border-radius: 7px;
+  background-color: brown;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  border: none;
+}
+
+button:hover{
+  border-radius: 7px;
+  background-color: black;
+  cursor: pointer;
+  color: white;
+}
+
+
+/* ==========================================
+   Navbar Section
+========================================== */
+.nav {
+  width: 100%;
+  height: 70px;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav img {
+  width: auto;
+  height: 70px;
+  float: left;
+  margin-left: 140px;
+}
+
+.nav ul {
+  list-style: none;
+  float: right;
+  margin-right: 270px;
+  padding-top: 20px;
+}
+
+.nav ul li {
+  display: inline;
+  font-size: 30px;
+  color: pink;
+  padding-left: 40px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+/* ==========================================
+   Hero Section
+========================================== */
+.hero {
+  width: 100%;
+  margin-top: 70px;
+  height: calc(100vh - 70px);
+  background-image: url('../images/hero.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero .info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  text-align: center;
+  font-size: 35px;
+}
+
+
+/* ==========================================
+   Team Section (.parent-team)
+========================================== */
+.parent-team {
+  width: 100%;
+  overflow: auto;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.box-team1, .box-team2, .box-team3 {
+  width: 30%;
+  height: 510px;
+  float: left;
+  padding: 10px;
+  border: 3px solid black;
+  border-radius: 4px;
+  position: relative;
+  cursor: default;
+  background-color: #fff;
+}
+
+.box-team2 {
+  margin: 0px 5%;
+}
+
+.image-box-team {
+  width: 90%;
+  margin: 0px auto;
+  position: relative;
+}
+
+.image-box-team img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  z-index: 1;
+}
+
+.over-box-team {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 2;
+}
+
+.team-icons {
+  position: absolute;
+  top: 11px;
+  left: 27px;
+  width: 50px;
+  height: auto;
+  background-color: brown;
+  text-align: center;
+  padding: 15px 0 5px 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 11;
+}
+
+.team-icons a {
+  display: block;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.team-icons a:hover {
+  transform: scale(1.25);
+  color: black;
+}
+
+.info-box-team {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-size: 20px;
+  padding-top: 10px;
+  line-height: 1.4;
+}
+
+.info-box-team h4 {
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.info-box-team p {
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+  padding: 10px 15px;
+}
+
+.info-box-team button {
+  position: relative;
+  z-index: 12;
+  display: inline-block;
+  min-width: 120px;
+  padding: 8px 0;
+  text-align: center;
+  font-size: 19px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: default;
+  transition: background-color 0.3s ease, color 0.3s ease, cursor 0.3s ease;
+}
+
+.box-team1:hover .over-box-team,
+.box-team2:hover .over-box-team,
+.box-team3:hover .over-box-team,
+.box-team1:hover .team-icons,
+.box-team2:hover .team-icons,
+.box-team3:hover .team-icons {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.box-team1:hover .info-box-team h4,
+.box-team2:hover .info-box-team h4,
+.box-team3:hover .info-box-team h4,
+.box-team1:hover .info-box-team p,
+.box-team2:hover .info-box-team p,
+.box-team3:hover .info-box-team p {
+  color: #582f0e;
+}
+
+.box-team1:hover .info-box-team button,
+.box-team2:hover .info-box-team button,
+.box-team3:hover .info-box-team button {
+  background-color: #ff8fa3;
+  color: #000000;
+  cursor: pointer;
+}
+
+
+/* ==========================================
+   Gallery Section (.parent-photo)
+========================================== */
+.parent-photo {
+  width: 100%;
+  background-color: #ffe5ec;
+  overflow: auto;
+  margin-top: 20px;
+  padding: 40px 0;
+}
+
+.img1, .img2, .img3, .img4 {
+  width: 48%;
+  float: left;
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 5px solid black;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.img1, .img3 {
+  margin-right: 4%;
+}
+
+.img2, .img4 {
+  margin-right: 0px;
+}
+
+.parent-photo img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: height 0.6s ease;
+  z-index: 2;
+}
+
+.img1 h4, .img2 h4, .img3 h4, .img4 h4,
+.img1 p, .img2 p, .img3 p, .img4 p,
+.icons-box {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.4s ease 0.3s;
+  color: white;
+}
+
+.img1 h4, .img2 h4, .img3 h4, .img4 h4 {
+  top: 20%;
+  font-size: 26px;
+  color: #fff;
+}
+
+.img1 p, .img2 p, .img3 p, .img4 p {
+  top: 45%;
+  font-size: 25px;
+  font-weight: bold;
+  color: #ddd;
+  line-height: 1.4;
+}
+
+.icons-box {
+  top: 75%;
+}
+
+.icons-box i {
+  font-size: 30px;
+  margin: 0 15px;
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.icons-box i:hover {
+  transform: scale(1.2);
+  color: #ffb3c1;
+}
+
+.img1:hover .overlay,
+.img2:hover .overlay,
+.img3:hover .overlay,
+.img4:hover .overlay {
+  height: 100%;
+}
+
+.img1:hover h4, .img2:hover h4, .img3:hover h4, .img4:hover h4,
+.img1:hover p, .img2:hover p, .img3:hover p, .img4:hover p,
+.img1:hover .icons-box, .img2:hover .icons-box, .img3:hover .icons-box, .img4:hover .icons-box {
+  opacity: 1;
+}
+
+
+/* ==========================================
+   Services Section (.parent-services)
+========================================== */
+.parent-services {
+  width: 100%;
+  overflow: auto;
+  margin-top: 20px;
+  padding: 30px 0;
+}
+
+.service-box1, .service-box2, .service-box3, .service-box4 {
+  width: 48%;
+  float: left;
+  margin-bottom: 30px;
+  padding: 40px 20px;
+  border: 4px solid black;
+  border-radius: 12px;
+  text-align: center;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-box1, .service-box3 {
+  margin-right: 4%;
+}
+
+.service-box2, .service-box4 {
+  margin-right: 0px;
+}
+
+.service-box1 .overlay-left,
+.service-box2 .overlay-left,
+.service-box3 .overlay-left,
+.service-box4 .overlay-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 0%;
+  background-color: #ff8fa3;
+  transition: height 0.5s ease;
+  z-index: 1;
+}
+
+.service-box1 .overlay-right,
+.service-box2 .overlay-right,
+.service-box3 .overlay-right,
+.service-box4 .overlay-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 0%;
+  background-color: #ff8fa3;
+  transition: height 0.5s ease;
+  z-index: 1;
+}
+
+.service-box1 i, .service-box2 i, .service-box3 i, .service-box4 i,
+.service-box1 h3, .service-box2 h3, .service-box3 h3, .service-box4 h3,
+.service-box1 p, .service-box2 p, .service-box3 p, .service-box4 p {
+  position: relative;
+  z-index: 2;
+  transition: color 0.4s ease;
+}
+
+.service-box1 i, .service-box2 i, .service-box3 i, .service-box4 i {
+  font-size: 45px;
+  color: #ff8fa3;
+  margin-bottom: 15px;
+}
+
+.service-box1 h3, .service-box2 h3, .service-box3 h3, .service-box4 h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.service-box1 p, .service-box2 p, .service-box3 p, .service-box4 p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.4;
+}
+
+.service-box1:hover .overlay-left,
+.service-box2:hover .overlay-left,
+.service-box3:hover .overlay-left,
+.service-box4:hover .overlay-left,
+.service-box1:hover .overlay-right,
+.service-box2:hover .overlay-right,
+.service-box3:hover .overlay-right,
+.service-box4:hover .overlay-right {
+  height: 100%;
+}
+
+.service-box1:hover h3, .service-box2:hover h3, .service-box3:hover h3, .service-box4:hover h3,
+.service-box1:hover p, .service-box2:hover p, .service-box3:hover p, .service-box4:hover p,
+.service-box1:hover i, .service-box2:hover i, .service-box3:hover i, .service-box4:hover i {
+  color: #ffffff;
+}
+
+
+/* ==========================================
+   Testimonials Section
+========================================== */
+.testimonials-section {
+  width: 100%;
+  padding: 100px 0;
+  background-image: url('../images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow: auto;
+}
+
+.testimonials-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.testimonials-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.testi-box {
+  width: 48%;
+  float: left;
+  color: white;
+  padding: 10px;
+}
+
+.testi-box:first-child {
+  margin-right: 4%;
+}
+
+.testi-box img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 20px;
+  border: 2px solid white;
+}
+
+.testi-info {
+  float: left;
+  width: calc(100% - 110px);
+}
+
+.testi-info h3 {
+  font-size: 28px;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.testi-info span {
+  display: block;
+  font-size: 18px;
+  color: #ff8fa3;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.testi-info p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+
+/* ==========================================
+   Pricing Section (.parent-pricing)
+========================================== */
+.parent-pricing {
+  width: 100%;
+  overflow: auto;
+  margin-top: 20px;
+  padding: 30px 0;
+}
+
+.price-box1, .price-box2, .price-box3 {
+  width: 31%;
+  height: 420px;
+  float: left;
+  padding: 35px 20px;
+  border: 4px solid black;
+  border-radius: 12px;
+  text-align: center;
+  background-color: #fff;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.price-box1, .price-box2 {
+  margin-right: 3.5%;
+}
+
+.price-box3 {
+  margin-right: 0px;
+}
+
+.price-circle {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 3px solid #ff8fa3;
+  margin: 0 auto 20px auto;
+  padding-top: 22px;
+  transition: border-color 0.4s ease;
+}
+
+.price-circle .amount {
+  display: block;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff8fa3;
+  line-height: 1;
+  transition: color 0.4s ease;
+}
+
+.price-circle .time {
+  font-size: 14px;
+  color: #777;
+  transition: color 0.4s ease;
+}
+
+.price-box1 .overlay-left,
+.price-box2 .overlay-left,
+.price-box3 .overlay-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 0%;
+  background-color: #ff8fa3;
+  transition: height 0.5s ease;
+  z-index: 1;
+}
+
+.price-box1 .overlay-right,
+.price-box2 .overlay-right,
+.price-box3 .overlay-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 0%;
+  background-color: #ff8fa3;
+  transition: height 0.5s ease;
+  z-index: 1;
+}
+
+.price-circle,
+.price-box1 h3, .price-box2 h3, .price-box3 h3,
+.price-box1 p, .price-box2 p, .price-box3 p,
+.buy-btn {
+  position: relative;
+  z-index: 2;
+  transition: color 0.4s ease, border-color 0.4s ease, background-color 0.4s ease;
+}
+
+.price-box1 h3, .price-box2 h3, .price-box3 h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #000;
+}
+
+.price-box1 p, .price-box2 p, .price-box3 p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.4;
+  height: 65px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.buy-btn {
+  width: 140px;
+  height: 40px;
+  border-radius: 7px;
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  border: none;
+  cursor: default;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.price-box1:hover .overlay-left,
+.price-box2:hover .overlay-left,
+.price-box3:hover .overlay-left,
+.price-box1:hover .overlay-right,
+.price-box2:hover .overlay-right,
+.price-box3:hover .overlay-right {
+  height: 100%;
+}
+
+.price-box1:hover h3, .price-box2:hover h3, .price-box3:hover h3,
+.price-box1:hover p, .price-box2:hover p, .price-box3:hover p,
+.price-box1:hover .amount, .price-box2:hover .amount, .price-box3:hover .amount,
+.price-box1:hover .time, .price-box2:hover .time, .price-box3:hover .time {
+  color: #ffffff;
+}
+
+.price-box1:hover .price-circle,
+.price-box2:hover .price-circle,
+.price-box3:hover .price-circle {
+  border-color: #ffffff;
+}
+
+.buy-btn:hover {
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+
+/* ==========================================
+   Team Parallax Section
+========================================== */
+.team-parallax-section {
+  width: 100%;
+  padding: 100px 0;
+  background-image: url('../images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow: auto;
+}
+
+.team-parallax-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.team-parallax-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.team-parallax-box {
+  width: 48%;
+  float: left;
+  color: white;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+.team-parallax-box:nth-child(odd) {
+  margin-right: 4%;
+}
+
+.team-parallax-box:nth-child(even) {
+  margin-right: 0px;
+}
+
+.team-parallax-box img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 20px;
+  border: 2px solid white;
+  object-fit: cover;
+}
+
+.team-parallax-info {
+  float: left;
+  width: calc(100% - 110px);
+}
+
+.team-parallax-info h3 {
+  font-size: 28px;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.team-parallax-info span {
+  display: block;
+  font-size: 18px;
+  color: #ff8fa3;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.team-parallax-info p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+
+/* ==========================================
+   News Section (.parent-news)
+========================================== */
+.parent-news {
+  width: 100%;
+  overflow: auto;
+  margin-top: 20px;
+  padding: 30px 0;
+}
+
+.news-box1, .news-box2 {
+  width: 48%;
+  float: left;
+  border: 4px solid black;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #fff;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.news-box1 {
+  margin-right: 4%;
+}
+
+.news-box2 {
+  margin-right: 0px;
+}
+
+.overlay-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.15);
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  transition: clip-path 0.6s ease-in-out;
+  z-index: 3;
+}
+
+.overlay-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.15);
+  clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
+  transition: clip-path 0.6s ease-in-out;
+  z-index: 3;
+}
+
+.news-box1:hover .overlay-top,
+.news-box2:hover .overlay-top {
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+}
+
+.news-box1:hover .overlay-bottom,
+.news-box2:hover .overlay-bottom {
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+}
+
+.image-news-box {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+}
+
+.image-news-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.info-news-box {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.info-news-box h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.info-news-box p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.read-more-btn {
+  position: relative;
+  z-index: 4;
+  width: 150px;
+  height: 40px;
+  border-radius: 7px;
+  background-color: brown;
+  color: white;
+  font-size: 18px;
+  border: none;
+  cursor: default;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.read-more-btn:hover {
+  cursor: pointer;
+  background-color: pink;
+  color: black;
+}
+
+
+/* ==========================================
+   Footer Section (.footer)
+========================================== */
+.footer {
+  width: 100%;
+  background-color: #590d22;
+  padding: 40px 0 25px 0;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.footer-logo img {
+  width: 260px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto 25px auto;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-social {
+  margin-bottom: 20px;
+}
+
+.footer-social a {
+  display: inline-block;
+  color: #ff8fa3;
+  font-size: 22px;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-social a:hover {
+  transform: scale(1.25);
+  color: #ffffff;
+}
+
+.copyright {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
